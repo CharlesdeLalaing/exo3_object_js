@@ -4,20 +4,24 @@
 // ### Donnez leur à chacun une propriété panier (tableau) contenant tous deux des ingrédients différents du super marché, par exemple huile,tomate,pain etc..
 // ### Rajouter à François la méthode derober, qui prend 2 aliments du panier de Sergio et les met dans son panier.
 
-let Francois = {
-    tableau : ["orange", "cereal","huile","croute"],
-    derober(){
-        elementSergio = this.tableau.push(Sergio.tableau[Math.floor(Math.random()*Sergio.tableau.length)]);
-        Sergio.tableau.pop(elementSergio);
-        element2Sergio = this.tableau.push(Sergio.tableau[Math.floor(Math.random()*Sergio.tableau.length)]);
-        Sergio.tableau.pop(element2Sergio);
+let francois = {
+    nom : "François",
+    tableau : ["Fraise", "Orange", "Surcre", "Gnôle"],
+    derober(el1, el2) {
+        el1 = sergio.tableau.indexOf(el1);
+        this.tableau.push(sergio.tableau[el1]);
+        sergio.tableau.splice(el1,1);
+        el1 = sergio.tableau.indexOf(el2);
+        this.tableau.push(sergio.tableau[el1]);
+        sergio.tableau.splice(el1,1);
     }
 }
 
-let Sergio = {
-    tableau : ["persil", "pain","fromage","bic"],
+let sergio = {
+    nom : "Sergio",
+    tableau : ["Necrarine", "Feuilles", "Thé", "Viandasse"],
 }
 
-Francois.derober();
-console.log(Francois);
-console.log(Sergio)
+francois.derober("Necrarine", "Thé")
+console.log(francois.tableau);
+console.log(sergio.tableau)
