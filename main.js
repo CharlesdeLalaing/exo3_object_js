@@ -5,23 +5,20 @@
 // ### Rajouter à François la méthode derober, qui prend 2 aliments du panier de Sergio et les met dans son panier.
 
 let francois = {
-    nom : "François",
-    tableau : ["Fraise", "Orange", "Surcre", "Gnôle"],
-    derober(el1, el2) {
-        el1 = sergio.tableau.indexOf(el1);
-        this.tableau.push(sergio.tableau[el1]);
-        sergio.tableau.splice(el1,1);
-        el1 = sergio.tableau.indexOf(el2);
-        this.tableau.push(sergio.tableau[el1]);
-        sergio.tableau.splice(el1,1);
+    tableau : ["huile", "betrave", "sex", "pisse"],
+    derober(oui){
+        for (let i = 0; i < oui.tableau.length-1; i++) {
+            this.tableau.push(oui.tableau[i]);
+            oui.tableau.splice(i,1);
+            // i--;
+        }
     }
 }
 
 let sergio = {
-    nom : "Sergio",
-    tableau : ["Necrarine", "Feuilles", "Thé", "Viandasse"],
+    tableau : ["tomate", "caviar", "dope", "lardons"],
 }
 
-francois.derober("Necrarine", "Thé")
+francois.derober(sergio);
 console.log(francois.tableau);
-console.log(sergio.tableau)
+console.log(sergio.tableau);
